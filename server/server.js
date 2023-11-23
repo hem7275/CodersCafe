@@ -33,6 +33,7 @@ const MONGO_URI =
         : process.env.MONGO_URI_DEV;
 
 
+mongoose.set('strictQuery', false);
 mongoose
     .connect(MONGO_URI)
     .then(() => {
