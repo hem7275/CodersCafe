@@ -1,8 +1,13 @@
 import React from 'react'
+import HelpPostList from '../../components/help/HelpPostList'
+import CommentList from '../../components/comment/CommentList'
 
-const HelpPage = () => {
+const HelpPage: React.FC = () => {
   return (
-    <div>HelpPage</div>
+    <div>
+      <HelpPostList />
+      <CommentList />
+    </div>
   )
 }
 
