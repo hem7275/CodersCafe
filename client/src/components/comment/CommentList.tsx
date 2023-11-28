@@ -1,3 +1,4 @@
+// CommentList.tsx
 import React from "react";
 import CommentItem from "./CommentItem";
 
@@ -14,14 +15,16 @@ const CommentList: React.FC = () => {
         {
             user: "bcdk",
             content: "alksjd dkj dfj",
-            createdAt: "20 mar 9339",
+            createdAt: "20 Mar 2023",
             votes: -10,
             parent: "9393822929",
         },
+        // Add more comments as needed
     ];
+
     return (
         <div>
-            <p>Comments</p>
+            <h2 className="text-lg font-semibold mb-4">Comments</h2>
             {comments.map((comment, id) => (
                 <CommentItem key={id} comment={comment} />
             ))}

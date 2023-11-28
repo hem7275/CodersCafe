@@ -1,17 +1,12 @@
+
+
+// HelpPostList.tsx
 import React from "react";
 import HelpPostItem from "./HelpPostItem";
 
-interface PostInterface {
-    title: string;
-    content: string;
-    user: string;
-    createdAt: string;
-    votes: number;
-    solved: boolean;
-}
-
 const HelpPostList: React.FC = () => {
-    const posts: PostInterface[] = [
+    const posts = [
+        // ... (your existing data)
         {
             title: "abcd",
             content: "kj dkfj df dkfj dfkj ",
@@ -37,9 +32,10 @@ const HelpPostList: React.FC = () => {
             solved: false,
         },
     ];
+
     return (
-        <div>
-            <h1>Help Post List</h1>
+        <div className="container mx-auto mt-8">
+            <h1 className="text-3xl font-bold mb-4">Help Post List</h1>
             {posts.map((post, id) => (
                 <HelpPostItem key={id} post={post} />
             ))}
@@ -48,3 +44,5 @@ const HelpPostList: React.FC = () => {
 };
 
 export default HelpPostList;
+
+
