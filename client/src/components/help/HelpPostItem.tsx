@@ -1,5 +1,6 @@
 // HelpPostItem.tsx
 import React from "react";
+import CommentList from "../comment/CommentList";
 
 interface PropeType {
     post: {
@@ -32,7 +33,8 @@ const HelpPostItem: React.FC<PropeType> = ({ post }) => {
                 {/* You can map through the comments array here and render each comment */}
                 {/* Example comment */}
                 <div className="bg-gray-100 p-3 rounded-md mb-2">
-                    <p className="text-gray-700">User123: This is a great solution!</p>
+                    {/* <p className="text-gray-700">User123: This is a great solution!</p> */}
+                    <CommentList />
                 </div>
                 {/* Add your comment input field and submit button here */}
             </div>

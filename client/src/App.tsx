@@ -9,6 +9,7 @@ import AlertNotification from "./components/AlertNotification";
 import { useAppSelector } from "./store";
 import Loading from "./components/Loading";
 import HelpPage from "./pages/help/Help";
+import HelpCreateForm from "./pages/help/HelpCreateForm";
 
 function App() {
     const dispatch = useDispatch();
@@ -31,6 +32,7 @@ function App() {
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="*" element={<Navigate to="/dashboard" />} />
                     <Route path="/help" element={<HelpPage />} />
+                    <Route path="/help/create" element={<HelpCreateForm />} />
                 </Routes>
             </BrowserRouter>
             <AlertNotification />
