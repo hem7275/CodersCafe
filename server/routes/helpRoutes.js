@@ -8,6 +8,6 @@ const router = Router();
 
 router.get("/all", requireAuth, getAllPost);
 
-router.post("/create", createPost);
+router.post("/create", requireAuth, createPost);
 
 module.exports = router;

@@ -1,5 +1,6 @@
 import axios from "axios";
 import { FC, useState } from "react";
+import { useAppSelector } from "../../store";
 
 interface FormType {
     title: string;
@@ -11,12 +12,32 @@ const HelpCreateForm: FC = () => {
         title: "",
         description: "",
     });
+    const {auth: {userDetails}} = useAppSelector((state) => state);
 
-    const fetcher = async (id: string) => {
+    const createPost = async () => {
+        try {
+            const res = await axios.post(
+                "http://localhost:5000/api/help/create",
+                { ...form },
+                {
+                    headers: {
+                        authorization: `Basic ${userDetails?.token}`,
+                        "Content-Type": "application/json",
+                    },
+                }
+            );
+
+            console.log(res.data);
+        } catch (error) {
+            console.log(error);
+        }
+    };
+
+    const getAllPosts = async () => {
         try {
             const res = await axios.get(`http://localhost:5000/api/help/all`, {
                 headers: {
-                    authorization: `Basic ${id}`,
+                    authorization: `Basic ${userDetails?.token}`,
                     "Content-Type": "application/json",
                 },
             });
@@ -30,13 +51,8 @@ const HelpCreateForm: FC = () => {
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
 
-        const data = localStorage.getItem("currentUser");
-
-        const user = JSON.parse(data || "");
-        // console.log(user?._id);
-        // console.log(form);
-
-        fetcher(user.token);
+        getAllPosts();
+        // createPost();
     };
 
     const onChange = (e: React.FormEvent<HTMLInputElement>) => {};
