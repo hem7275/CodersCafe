@@ -8,6 +8,7 @@ const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
 const friendInvitationRoutes = require("./routes/friendInvitationRoutes");
 const groupChatRoutes = require("./routes/groupChatRoutes")
+const helpRouter = require('./routes/helpRoutes')
 
 const { createSocketServer } = require("./socket/socketServer");
 
@@ -21,6 +22,7 @@ app.use(cors());
 app.use("/api/auth", authRoutes);
 app.use("/api/invite-friend", friendInvitationRoutes);
 app.use("/api/group-chat", groupChatRoutes);
+app.use("/api/help", helpRouter);
 
 const server = http.createServer(app);
 

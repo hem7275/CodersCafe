@@ -19,6 +19,20 @@ const CommentList: React.FC = () => {
             votes: -10,
             parent: "9393822929",
         },
+        {
+            user: "bcdk",
+            content: "alksjd dkj dfj",
+            createdAt: "20 Mar 2023",
+            votes: -10,
+            parent: "9393822929",
+        },
+        {
+            user: "bcdk",
+            content: "alksjd dkj dfj",
+            createdAt: "20 Mar 2023",
+            votes: -10,
+            parent: "9393822929",
+        },
         // Add more comments as needed
     ];
 
